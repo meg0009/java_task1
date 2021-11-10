@@ -66,6 +66,14 @@ public class MyComplex {
                 Math.abs(imag - another.imag) < eps;
     }
 
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result += 31 * real;
+        result += 31 * imag;
+        return result;
+    }
+
     public double magnitude() {
         return Math.sqrt(real * real + imag * imag);
     }

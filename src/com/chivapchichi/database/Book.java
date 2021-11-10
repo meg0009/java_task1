@@ -70,4 +70,29 @@ public class Book {
         String res = resBuilder.toString();
         return res.length() != 0 ? res.substring(0, res.length() - 2) : res.toString();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Book book = (Book) obj;
+        return name.equals(book.name) &&
+                Arrays.equals(authors, book.authors) &&
+                price == book.price &&
+                qty == book.qty;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result += 31 * name.hashCode();
+        result += 31 * Arrays.hashCode(authors);
+        result += 31 * price;
+        result += 31 * qty;
+        return result;
+    }
 }

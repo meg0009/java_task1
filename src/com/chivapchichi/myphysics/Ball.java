@@ -7,6 +7,8 @@ public class Ball {
     private float xDelta;
     private float yDelta;
 
+    private static final float eps = .000001f;
+
     public Ball(float x, float y, int radius, int speed, int direction) {
         this.x = x;
         this.y = y;
@@ -77,5 +79,32 @@ public class Ball {
                 ", speed=(" + xDelta +
                 ',' + yDelta +
                 ")]";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Ball ball = (Ball) obj;
+        return Math.abs(x - ball.x) < eps &&
+                Math.abs(y - ball.y) < eps &&
+                radius == ball.radius &&
+                Math.abs(xDelta - ball.xDelta) < eps &&
+                Math.abs(yDelta - ball.yDelta) < eps;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result += 31 * Float.floatToIntBits(x);
+        result += 31 * Float.floatToIntBits(y);
+        result += 31 * radius;
+        result += 31 * Float.floatToIntBits(xDelta);
+        result += 31 * Float.floatToIntBits(yDelta);
+        return result;
     }
 }

@@ -43,4 +43,25 @@ public class MyTriangle {
         return "Scalene";
 
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        MyTriangle t = (MyTriangle) obj;
+        return v1.equals(t.v1) && v2.equals(t.v2) && v3.equals(t.v3);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result += 31 * v1.hashCode();
+        result += 31 * v2.hashCode();
+        result += 31 * v3.hashCode();
+        return result;
+    }
 }

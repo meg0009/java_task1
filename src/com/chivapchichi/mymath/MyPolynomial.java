@@ -1,5 +1,7 @@
 package com.chivapchichi.mymath;
 
+import java.util.Arrays;
+
 public class MyPolynomial {
     private double[] coeffs;
 
@@ -69,5 +71,22 @@ public class MyPolynomial {
             }
         }
         return res;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        MyPolynomial poly = (MyPolynomial) obj;
+        return Arrays.equals(coeffs, poly.coeffs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(coeffs);
     }
 }

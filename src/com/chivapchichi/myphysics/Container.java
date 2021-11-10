@@ -48,4 +48,29 @@ public class Container {
                 ',' + y2 +
                 ")]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Container c = (Container) obj;
+        return x1 == c.x1 &&
+                y1 == c.y1 &&
+                x2 == c.x2 &&
+                y2 == c.y2;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result += 31 * x1;
+        result += 31 * y1;
+        result += 31 * x2;
+        result += 31 * y2;
+        return result;
+    }
 }

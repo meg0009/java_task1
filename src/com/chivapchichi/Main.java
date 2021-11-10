@@ -43,6 +43,15 @@ public class Main {
                 c1);
         System.out.println("Расчёт площади: c1.area = " + c1.calculateArea());
 
+        System.out.println("проверка equals и hashCode");
+        Circle c4 = new Circle(20., "green");
+        System.out.println("должно быть true: " + c3.equals(c4));
+        Circle c5 = c3;
+        System.out.println("должно быть true: " + c3.equals(c5));
+        System.out.println("должно быть false: " + c3.equals(c1));
+        System.out.println("должно быть false: " + c3.equals("1234"));
+        System.out.println("hashCode c1 = " + c1.hashCode() +
+                ", c3 = " + c3.hashCode() + ", c4 = " + c4.hashCode());
 
         System.out.println("==========================");
         System.out.println("#2 Rectangle class");
@@ -67,6 +76,16 @@ public class Main {
         System.out.println("Площадь r1 = " + r1.calculateArea());
         System.out.println("Периметр r1 = " + r1.calculatePerimeter());
 
+        System.out.println("проверка equals и hashCode");
+        Rectangle r3 = new Rectangle(5.f, 5.f);
+        System.out.println("должно быть true: " + r2.equals(r3));
+        Rectangle r4 = r2;
+        System.out.println("должно быть true: " + r2.equals(r4));
+        System.out.println("должно быть false: " + r2.equals(r1));
+        System.out.println("должно быть false: " + r2.equals("1234"));
+        System.out.println("hashCode r1 = " + r1.hashCode() +
+                ", r2 = " + r2.hashCode() + ", r3 = " + r3.hashCode());
+
 
         System.out.println("==========================");
         System.out.println("#3 Employee class");
@@ -90,6 +109,15 @@ public class Main {
         System.out.println("Результат после e1.raiseSalary(50) = " +
                 e1.getSalary());
 
+        System.out.println("проверка equals и hashCode");
+        Employee e3 = new Employee(2, "Luffy", "Monkey D.", 1500);
+        System.out.println("должен быть true: " + e2.equals(e3));
+        Employee e4 = e2;
+        System.out.println("должен быть true: " + e2.equals(e4));
+        System.out.println("должен быть false: " + e2.equals(e1));
+        System.out.println("должен быть false: " + e2.equals(c1));
+        System.out.println("hashCode e1 = " + e1.hashCode() + ", e2 = " + e2.hashCode() +
+                ", e3 = " + e3.hashCode());
 
         System.out.println("==========================");
         System.out.println("#4 Book class");
@@ -123,6 +151,16 @@ public class Main {
                 "-", 'm'), new Author("Mike Wazowski", "-", 'f')}, 1500, 100);
         System.out.println("когда несколько авторов b3 = " + b3.getAuthorNames());
 
+        System.out.println("проверка equals и hashCode");
+        Book b4 = new Book("Faust", new Author[]{new Author("Johann Wolfgang von Goethe",
+                "-", 'm'), new Author("Mike Wazowski", "-", 'f')}, 1500, 100);
+        System.out.println("должен быть true: " + b3.equals(b4));
+        Book b5 = b3;
+        System.out.println("должен быть true: " + b3.equals(b5));
+        System.out.println("должен быть false: " + b3.equals(b1));
+        System.out.println("должен быть false: " + b3.equals(c1));
+        System.out.println("hashCode b3 = " + b3.hashCode() + ", b4 = " + b4.hashCode() +
+                ", b1 = " + b1.hashCode());
 
         System.out.println("==========================");
         System.out.println("#5 MyPoint class");
@@ -150,6 +188,16 @@ public class Main {
         System.out.println("дистанция от p1 = " + p1 +
                 " до точки (0, 0) = " + p1.distance());
 
+        System.out.println("проверка equals и hashCode");
+        MyPoint p3 = new MyPoint(10., 20.);
+        System.out.println("должно быть true: " + p2.equals(p3));
+        MyPoint p4 = p2;
+        System.out.println("должно быть true: " + p2.equals(p4));
+        System.out.println("должно быть false: " + p2.equals(p1));
+        System.out.println("должно быть false: " + p2.equals("1234"));
+        System.out.println("hashCode p1 = " + p1.hashCode() +
+                ", p2 = " + p2.hashCode() + ", p3 = " + p3.hashCode());
+
 
         System.out.println("==========================");
         System.out.println("#6 MyTriangle class");
@@ -167,6 +215,16 @@ public class Main {
         System.out.println("Тип треугольника isosceles - " + isosceles.getType());
         MyTriangle equilateral = new MyTriangle(2., 1., 10., 1., 6., 7.92820323);
         System.out.println("Тип треугольника equilateral - " + equilateral.getType());
+
+        System.out.println("проверка equals и hashCode");
+        MyTriangle t3 = new MyTriangle(new MyPoint(2., 1.), new MyPoint(4., 5.), new MyPoint(7., 3.));
+        System.out.println("должно быть true: " + t2.equals(t3));
+        MyTriangle t4 = t2;
+        System.out.println("должно быть true: " + t2.equals(t4));
+        System.out.println("должно быть false: " + t2.equals(t1));
+        System.out.println("должно быть false: " + t2.equals("1234"));
+        System.out.println("hashCode t1 = " + t1.hashCode() +
+                ", t2 = " + t2.hashCode() + ", t3 = " + t3.hashCode());
 
 
         System.out.println("==========================");
@@ -237,6 +295,16 @@ public class Main {
         System.out.println("num1 = " + num1 +
                 " num1.conjugate() = " + num1.conjugate());
 
+        System.out.println("проверка equals и hashCode");
+        MyComplex num6 = new MyComplex(7, 9);
+        System.out.println("должно быть true: " + num2.equals(num6));
+        MyComplex num7 = num2;
+        System.out.println("должно быть true: " + num2.equals(num7));
+        System.out.println("должно быть false: " + num2.equals(num1));
+        System.out.println("должно быть false: " + num2.equals("1234"));
+        System.out.println("hashCode num1 = " + num1.hashCode() +
+                ", num2 = " + num2.hashCode() + ", num6 = " + num6.hashCode());
+
 
         System.out.println("==========================");
         System.out.println("#2 MyPolynomial class");
@@ -254,6 +322,16 @@ public class Main {
         System.out.println("poly1 = " + poly1 +
                 " poly2 = " + poly2 +
                 " poly1.multiply(poly2) = " + poly1.multiply(poly2));
+
+        System.out.println("проверка equals и hashCode");
+        MyPolynomial poly3 = new MyPolynomial(0., -2., 1, 7., -12.);
+        System.out.println("должно быть true: " + poly2.equals(poly3));
+        MyPolynomial poly4 = poly2;
+        System.out.println("должно быть true: " + poly2.equals(poly4));
+        System.out.println("должно быть false: " + poly2.equals(poly1));
+        System.out.println("должно быть false: " + poly2.equals("1234"));
+        System.out.println("hashCode poly1 = " + poly1.hashCode() +
+                ", poly2 = " + poly2.hashCode() + ", poly3 = " + poly3.hashCode());
 
 
         System.out.println("==========================");
@@ -311,5 +389,27 @@ public class Main {
         }
         System.out.println("после совершения move " + i +
                 " раз мяч вышел из контейнера");
+
+        System.out.println("проверка equals и hashCode Ball");
+        Ball ball2 = new Ball(4, 5, 1, 2, -30);
+        Ball ball3 = new Ball(4, 5, 1, 2, -30);
+        System.out.println("должно быть true: " + ball2.equals(ball3));
+        Ball ball4 = ball2;
+        System.out.println("должно быть true: " + ball2.equals(ball4));
+        System.out.println("должно быть false: " + ball2.equals(ball1));
+        System.out.println("должно быть false: " + ball2.equals("1234"));
+        System.out.println("hashCode ball1 = " + ball1.hashCode() +
+                ", ball2 = " + ball2.hashCode() + ", ball3 = " + ball3.hashCode());
+
+        System.out.println("проверка equals и hashCode Container");
+        Container container2 = new Container(3, 5, 15, 10);
+        System.out.println("должно быть true: " + container.equals(container2));
+        Container container3 = container;
+        System.out.println("должно быть true: " + container.equals(container3));
+        Container container4 = new Container(3, 7, 15, 10);
+        System.out.println("должно быть false: " + container.equals(container4));
+        System.out.println("должно быть false: " + container.equals("1234"));
+        System.out.println("hashCode container = " + container.hashCode() +
+                ", container2 = " + container2.hashCode() + ", container4 = " + container4.hashCode());
     }
 }
